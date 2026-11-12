@@ -1,0 +1,130 @@
+NETWORK SCANNING AND OS DETECTION REPORT
+
+Project: Network Scanning and OS Detection Using Nmap / Zenmap Author:
+Aritra Pal Environment: Kali Linux / Zenmap Assessment date shown in
+screenshot: 12 November 2026 Report type: Educational practical report
+
+1. PROJECT OVERVIEW
+
+This practical demonstrates the use of Nmap through the Zenmap graphical
+interface to examine a single target host. The scan output was reviewed
+for host availability, open TCP ports, operating-system fingerprinting
+information, and traceroute details.
+
+2. OBJECTIVES
+
+-   Understand basic network scanning and host discovery.
+-   Observe open TCP ports on the selected target.
+-   Review Nmap’s service and operating-system detection output.
+-   Interpret traceroute and network-distance information.
+-   Record findings and limitations accurately.
+
+3. TOOLS AND ENVIRONMENT
+
+-   Nmap 7.99
+-   Zenmap (graphical interface for Nmap)
+-   Kali Linux environment
+
+4. SCAN CONFIGURATION
+
+The Zenmap screenshot shows the profile “Intense scan, all TCP ports”.
+The displayed Nmap command was:
+
+    nmap -p1-65535 -T4 -A -v [REDACTED_TARGET]
+
+The target address and hostname have been redacted in this public
+report. The screenshots show one target host. The scan covered TCP ports
+1 through 65535 and enabled Nmap’s aggressive detection features. The
+scan was completed in the captured terminal output.
+
+IMPORTANT SCOPE NOTE: The address visible in the original screenshot
+begins with 192.178. That is not part of the private 192.168.0.0/16
+range. Before publishing raw scan files or screenshots, confirm that the
+target was explicitly authorized for testing. Do not publish a real
+public IP address, hostname, or raw scan data unless you have
+permission. This report therefore uses a redacted target.
+
+5. RESULTS
+
+The Zenmap output displayed the following open TCP ports:
+
+  Port      State   Commonly associated service
+  --------- ------- -----------------------------
+  53/tcp    Open    DNS
+  80/tcp    Open    HTTP
+  110/tcp   Open    POP3
+  443/tcp   Open    HTTPS
+
+These service names are the conventional associations for the port
+numbers. The supplied screenshots do not show confirmed service-version
+details, so no specific product, version, or vulnerability is claimed.
+
+Host discovery: - IP addresses scanned: 1 - Hosts reported up: 1
+
+Traceroute: - Network distance reported by Nmap: 2 hops - The displayed
+route included an intermediate private-network address. - The target
+hostname and address are omitted here for privacy and safety.
+
+Scan completion: - Nmap version: 7.99 - Completion time reported: 748.93
+seconds - Nmap reported that OS and service detection had been
+performed.
+
+6. OPERATING SYSTEM DETECTION
+
+Nmap displayed several possible operating-system guesses, including
+Windows and Linux families, as well as an embedded-device possibility.
+However, the output explicitly stated:
+
+    No exact OS matches for host (test conditions non-ideal).
+
+Therefore, the operating system could not be identified reliably from
+this scan. The guesses should not be treated as a confirmed operating
+system.
+
+7. ANALYSIS AND LIMITATIONS
+
+-   Four TCP ports were reported open in the Zenmap output.
+-   Open ports indicate that a service may be accepting connections;
+    they do not, by themselves, prove that a vulnerability exists.
+-   The screenshots do not provide enough evidence to identify software
+    versions or validate vulnerabilities.
+-   OS fingerprinting was inconclusive.
+-   No vulnerability exploitation or penetration testing was performed.
+-   Findings describe only the target and scan conditions shown in the
+    evidence.
+
+8. SECURITY RECOMMENDATIONS
+
+For the authorized system owner: - Confirm that each exposed service is
+required for business purposes. - Restrict DNS, web, and mail services
+to intended networks and users. - Keep the software providing these
+services patched and supported. - Use firewall rules to limit
+unnecessary inbound access. - Review service configuration and
+authentication controls. - Investigate unexpected exposure through the
+system owner or administrator.
+
+9. EVIDENCE
+
+The project evidence should include: - Zenmap screenshot showing the
+target field, scan profile, and discovered open TCP ports. - Nmap
+completion output showing one host up and the scan duration. - Sanitized
+scan output files, only if authorized for publication.
+
+Suggested evidence filenames: - Screenshots/zenmap-scan-results.png -
+Screenshots/nmap-completion-output.png
+
+10. CONCLUSION
+
+This practical provided experience using Nmap and Zenmap to observe host
+availability, open TCP ports, traceroute information, and OS-detection
+output. The scan reported ports 53, 80, 110, and 443 as open.
+Operating-system identification remained inconclusive, and the available
+evidence does not establish that any vulnerability is present. The
+results have been documented with the target identifiers redacted.
+
+11. DISCLAIMER
+
+This report is for educational documentation. Network scanning must only
+be performed against systems that you own or for which you have
+explicit, written authorization. Confirm the assessment scope before
+sharing scan outputs publicly.
